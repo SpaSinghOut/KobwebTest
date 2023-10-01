@@ -1,5 +1,6 @@
 site:
-  title: "KobwebTest"
+  title: "Spartak Singh"
+  routePrefix: "KobwebTest"
 
 server:
   files:
@@ -9,6 +10,6 @@ server:
       api: "build/libs/spartanlabs.jar"
     prod:
       script: "build/dist/js/productionExecutable/spartanlabs.js"
-      siteRoot: ".kobweb/site"
+      siteRoot: "../docs"
 
   port: 8080
