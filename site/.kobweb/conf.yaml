@@ -1,15 +1,15 @@
 site:
   title: "Kobweb GHP Demo"
-  routePrefix: "kobweb-ghp-demo"
+  routePrefix: "KobwebTest"
 
 server:
   files:
     dev:
       contentRoot: "build/processedResources/js/main/public"
-      script: "build/developmentExecutable/site.js"
+      script: "build/dist/js/developmentExecutable/spartanlabs.js"
       api: "build/libs/site.jar"
     prod:
-      script: "build/distributions/site.js"
+      script: "build/dist/js/productionExecutable/spartanlabs.js"
       siteRoot: "../docs"
 
   port: 8080
