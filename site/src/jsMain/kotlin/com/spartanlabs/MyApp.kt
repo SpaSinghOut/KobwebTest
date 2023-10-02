@@ -23,7 +23,9 @@ fun initSilk(ctx: InitSilkContext) {
 @App
 @Composable
 fun MyApp(content: @Composable () -> Unit) {
-    Column(Modifier.fillMaxSize()) {
-        SpanText("Hello, world!")
-    }
+    SilkApp {
+        Surface(SmoothColorStyle.toModifier().minHeight(100.vh)) {
+            content()
+        }
+        }
 }
