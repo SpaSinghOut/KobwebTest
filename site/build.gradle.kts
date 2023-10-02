@@ -4,10 +4,10 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.kobweb.application)
-    // alias(libs.plugins.kobwebx.markdown)
+    alias(libs.plugins.kobwebx.markdown)
 }
 
-group = "com.spartanlabs"
+group = "org.example.site"
 version = "1.0-SNAPSHOT"
 
 kobweb {
@@ -19,7 +19,7 @@ kobweb {
 }
 
 kotlin {
-    configAsKobwebApplication("spartanlabs")
+    configAsKobwebApplication("site", includeServer = true)
 
     sourceSets {
         val commonMain by getting {
@@ -30,12 +30,18 @@ kotlin {
 
         val jsMain by getting {
             dependencies {
-                implementation(compose.html.core)
+                implementation(compose.web.core)
                 implementation(libs.kobweb.core)
-                implementation(libs.kobweb.silk)
-                implementation(libs.silk.icons.fa)
-                // implementation(libs.kobwebx.markdown)
-            }
+                implementation(libs.kobweb.silk.core)
+                implementation(libs.kobweb.silk.icons.fa)
+                implementation(libs.kobwebx.markdown)
+             }
+        }
+
+        val jvmMain by getting {
+            dependencies {
+                implementation(libs.kobweb.api)
+             }
         }
     }
 }

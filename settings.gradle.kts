@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "spartanlabs"
+rootProject.name = "site"
 
 include(":site")
